@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tabs-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+}
+
+.tab-button {
+  background-color: #ccc;
+  color: #000;
+  padding: 12px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: #ddd;
+}
+
+.tab-content {
+  flex: 1;
+  padding: 20px;
+  display: none;
+}
+
+#tab-1, #tab-2, #tab-3 {
+  display: none;
+}
+
+#tab-1:target, #tab-2:target, #tab-3:target {
+  display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="tabs-container">
+        <div class="tabs">
+          <button class="tab-button" id="tab-button-1">Tab 1</button>
+          <button class="tab-button" id="tab-button-2">Tab 2</button>
+          <button class="tab-button" id="tab-button-3">Tab 3</button>
+        </div>
+        <div class="tab-content" id="tab-1">
+          <p>Content for tab 1</p>
+        </div>
+        <div class="tab-content" id="tab-2">
+          <p>Content for tab 2</p>
+        </div>
+        <div class="tab-content" id="tab-3">
+          <p>Content for tab 3</p>
+        </div>
+      </div>   
+      <script>
+        const tabButtons = document.querySelectorAll('.tab-button');
+tabButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const tabId = e.target.id.replace('tab-button-', '');
+    const tab = document.getElementById(`tab-${tabId}`);
+    tab.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+      </script>   
+</body>
+</html>
