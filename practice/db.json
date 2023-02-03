@@ -1,0 +1,24 @@
+{
+  "userDetails": [
+    {
+      "id": 1,
+      "username": "Samaira",
+      "password": "Lodge"
+    },
+    {
+      "id": 2,
+      "username": "Veronica",
+      "password": "KoftheW"
+    },
+    {
+      "id": 3,
+      "username": "Ria",
+      "password": "Luthra"
+    },
+    {
+      "username": "mubaidur",
+      "password": "Rahman",
+      "id": 4
+    }
+  ]
+}
